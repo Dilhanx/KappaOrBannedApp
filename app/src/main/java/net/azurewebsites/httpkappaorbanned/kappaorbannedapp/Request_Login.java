@@ -10,7 +10,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.*;
 
 public class Request_Login extends StringRequest {
-        private static final String LOGIN_REQUEST_URL = "http://10.0.2.2:5000/login";
+        private static final String LOGIN_REQUEST_URL = "http://kappaorbanned.azurewebsites.net/login";
         private Map<String, String> params;
 
         public Request_Login(String username, String password, Response.Listener<String> listener) {

@@ -34,11 +34,11 @@ public class SearchActivity extends AppCompatActivity {
 
         Intent tintent = getIntent();
         final String username = tintent.getStringExtra("username");
-        tf_search_name.setText(username);
+
         bt_search_search.setOnClickListener(new View.OnClickListener() {// On click Search button
           @Override
           public void onClick(View view) {
-
+//              bt_search_search.setEnabled(false);
           pb_search.setVisibility(View.VISIBLE);
           LOGGER.log(Level.FINE, "Search attempt");
           final String streamername = tf_search_name.getText().toString();
@@ -52,17 +52,14 @@ public class SearchActivity extends AppCompatActivity {
                           JSONObject jsonResponse = new JSONObject(response);
                           LOGGER.log(Level.FINE, jsonResponse.toString());
                           String status = jsonResponse.getString("status");
-                          if (status.equals("Found")) {// If login is valid move on
-                              Intent intent = new Intent(SearchActivity.this, testActivity.class);
+                          if (status.equals("Found")) {// If streamer found is valid move on
+                              bt_search_search.setEnabled(true);
 
-                              tf_search_name.setText(jsonResponse.toString());
                               LOGGER.log(Level.FINE, "Found");
                               pb_search.setVisibility(View.INVISIBLE);
-
-                              intent.putExtra("username", username);
-                              intent.putExtra("streamername",streamername);
-                              SearchActivity.this.startActivity( intent);
-                          } else {//If not valid display error dialog
+                              SearchActivity.this.startActivity( new Intent(SearchActivity.this, StreamerActivity.class).putExtra("username", username).putExtra("streamername",streamername));
+                          } else {//If not found display error dialog
+                              bt_search_search.setEnabled(true);
                               pb_search.setVisibility(View.INVISIBLE);
                               LOGGER.log(Level.FINE, "Search Failed");
                               AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
@@ -71,6 +68,8 @@ public class SearchActivity extends AppCompatActivity {
                           }
 
                       } catch (JSONException e) {
+                          LOGGER.log(Level.SEVERE, e.toString());
+                          bt_search_search.setEnabled(true);
                           pb_search.setVisibility(View.INVISIBLE);
                           AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
                           builder.setMessage("Search Failed : Sever error").setNegativeButton("Retry", null).create().show();e.printStackTrace();
@@ -84,9 +83,10 @@ public class SearchActivity extends AppCompatActivity {
 
               }
               else{
+                bt_search_search.setEnabled(true);
                   pb_search.setVisibility(View.INVISIBLE);
                   AlertDialog.Builder builder = new AlertDialog.Builder(SearchActivity.this);
-                  builder.setMessage("Fill in the details").setNegativeButton("Ok", null).create().show();
+                  builder.setMessage("Fill in the streamer name").setNegativeButton("Ok", null).create().show();
 
               }
 

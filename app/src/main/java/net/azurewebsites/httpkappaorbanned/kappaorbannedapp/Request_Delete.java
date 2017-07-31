@@ -9,15 +9,14 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.util.*;
 
-public class Request_Register extends StringRequest {
-    private static final String REGISTER_REQUEST_URL = "http://kappaorbanned.azurewebsites.netregister";
+public class Request_Delete extends StringRequest {
+    private static final String Delete_REQUEST_URL = "http://kappaorbanned.azurewebsites.net/delete";
     private Map<String, String> params;
 
-    public Request_Register(String username,String email, String password, Response.Listener<String> listener) {
-        super(Method.POST, REGISTER_REQUEST_URL, listener, null);
+    public Request_Delete(String username,String password, Response.Listener<String> listener) {
+        super(Method.POST, Delete_REQUEST_URL , listener, null);
         params = new HashMap<>();
         params.put("username", username);
-        params.put("email", email);
         params.put("password", password);
     }
     @Override

@@ -20,8 +20,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         final EditText tf_register_username = findViewById(R.id.tf_register_username);
         final EditText tf_register_email = findViewById(R.id.tf_register_email);
-        final EditText pf_register_password =  findViewById(R.id.pf_register_password);
-        final Button bt_register_register =  findViewById(R.id.bt_register_register);
+        final EditText pf_register_password =  findViewById(R.id.pf_delete_password);
+        final Button bt_register_register =  findViewById(R.id.bt_delete_delete);
         final ProgressBar pb_register = findViewById(R.id.pb_register);
 
         bt_register_register.setOnClickListener(new View.OnClickListener() {// On click login button
@@ -61,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                                   }
 
                               } catch (JSONException e) {
+                                  LOGGER.log(Level.SEVERE, e.toString());
                                   bt_register_register.setEnabled(true);
                                   pb_register.setVisibility(View.INVISIBLE);
                                   AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);

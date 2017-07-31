@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -26,12 +27,12 @@ public class testActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
 
-        final EditText v1 = findViewById(R.id.textView3);
-        final android.widget.EditText v2 = findViewById(R.id.textView5);
+        final TextView v1 = findViewById(R.id.textView3);
+        final TextView v2 = findViewById(R.id.textView5);
 
         Intent intent = getIntent();
-        final String username = intent.getStringExtra("username");
-       final String streamername = intent.getStringExtra("streamername");
+        String username = intent.getStringExtra("username");
+        String streamername = intent.getStringExtra("streamername");
 
         v1.setText(username);
         v2.setText(streamername);

@@ -55,7 +55,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/bt_register_register"
+        android:id="@+id/bt_delete_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="66dp"
@@ -69,7 +69,7 @@
         android:layout_marginRight="66dp" />
 
     <EditText
-        android:id="@+id/pf_register_password"
+        android:id="@+id/pf_delete_password"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
@@ -79,7 +79,7 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/bt_register_register"
+        app:layout_constraintBottom_toTopOf="@+id/bt_delete_delete"
         app:layout_constraintRight_toRightOf="@+id/tf_register_email"
         android:layout_marginTop="6dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_register_password"
@@ -108,9 +108,9 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         android:layout_marginStart="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bt_register_register"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_delete_delete"
         android:layout_marginEnd="1dp"
-        app:layout_constraintRight_toRightOf="@+id/bt_register_register"
+        app:layout_constraintRight_toRightOf="@+id/bt_delete_delete"
         android:layout_marginTop="135dp"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="134dp"
@@ -125,8 +125,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         android:visibility="invisible"
-        app:layout_constraintRight_toLeftOf="@+id/bt_register_register"
-        app:layout_constraintTop_toBottomOf="@+id/pf_register_password"
+        app:layout_constraintRight_toLeftOf="@+id/bt_delete_delete"
+        app:layout_constraintTop_toBottomOf="@+id/pf_delete_password"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 </android.support.constraint.ConstraintLayout>
