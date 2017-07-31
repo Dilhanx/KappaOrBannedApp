@@ -21,26 +21,28 @@ import java.util.logging.Logger;
 
 public class StreamerActivity extends AppCompatActivity {
 
-    final EditText tv_streamer_streamer_name = findViewById(R.id.tv_streamer_streamer_name);
-    final EditText tv_streamer_real_name = findViewById(R.id.tv_streamer_real_name);
-    final EditText tv_streamer_schedule = findViewById(R.id.tv_streamer_schedule);
-    final EditText tv_streamer_type = findViewById(R.id.tv_streamer_type);
-    final EditText tv_streamer_bio = findViewById(R.id.tv_streamer_bio);
-
-    final Button bt_search_search = findViewById(R.id.bt_search_search);
-    final ProgressBar pb_streamer = findViewById(R.id.pb_streamer);
-
-
-
-    Intent intent = getIntent();
-    final String username = intent.getStringExtra("username");
-    final String streamername = intent.getStringExtra("streamername");
-
-    private static final Logger LOGGER = Logger.getLogger( StartActivity.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( StreamerActivity.class.getName() );
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_streamer);
+
+
+        final EditText tv_streamer_streamer_name = findViewById(R.id.tv_streamer_streamer_name);
+        final EditText tv_streamer_real_name = findViewById(R.id.tv_streamer_real_name);
+        final EditText tv_streamer_schedule = findViewById(R.id.tv_streamer_schedule);
+        final EditText tv_streamer_type = findViewById(R.id.tv_streamer_type);
+        final EditText tv_streamer_bio = findViewById(R.id.tv_streamer_bio);
+
+        final Button bt_streamer_comment = findViewById(R.id.bt_streamer_comment);
+        final Button bt_streamer_emote = findViewById(R.id.bt_streamer_emote);
+
+        final ProgressBar pb_streamer = findViewById(R.id.pb_streamer);
+
+//        Intent intent = getIntent();
+//        final String username = intent.getStringExtra("username");
+//        final String streamername = intent.getStringExtra("streamername");
+
 
 //        Response.Listener<String> responseListener = new Response.Listener<String>() {
 //            @Override

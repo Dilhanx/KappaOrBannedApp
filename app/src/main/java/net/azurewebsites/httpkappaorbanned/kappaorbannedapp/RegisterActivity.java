@@ -12,7 +12,7 @@ import java.util.logging.*;
 import org.json.*;
 
 public class RegisterActivity extends AppCompatActivity {
-    private static final Logger LOGGER = Logger.getLogger( StartActivity.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( RegisterActivity.class.getName() );
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

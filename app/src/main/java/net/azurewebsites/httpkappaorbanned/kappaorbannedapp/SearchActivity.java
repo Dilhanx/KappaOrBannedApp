@@ -20,7 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SearchActivity extends AppCompatActivity {
-    private static final Logger LOGGER = Logger.getLogger( StartActivity.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( SearchActivity.class.getName() );
 
 
     @Override
@@ -32,9 +32,9 @@ public class SearchActivity extends AppCompatActivity {
         final Button bt_search_search = findViewById(R.id.bt_search_search);
         final ProgressBar pb_search = findViewById(R.id.pb_search);
 
-        Intent intent = getIntent();
-        final String username = intent.getStringExtra("username");
-
+        Intent tintent = getIntent();
+        final String username = tintent.getStringExtra("username");
+        tf_search_name.setText(username);
         bt_search_search.setOnClickListener(new View.OnClickListener() {// On click Search button
           @Override
           public void onClick(View view) {
@@ -53,9 +53,15 @@ public class SearchActivity extends AppCompatActivity {
                           LOGGER.log(Level.FINE, jsonResponse.toString());
                           String status = jsonResponse.getString("status");
                           if (status.equals("Found")) {// If login is valid move on
+                              Intent intent = new Intent(SearchActivity.this, testActivity.class);
+
+                              tf_search_name.setText(jsonResponse.toString());
                               LOGGER.log(Level.FINE, "Found");
                               pb_search.setVisibility(View.INVISIBLE);
-                              SearchActivity.this.startActivity(new Intent(SearchActivity.this, StreamerActivity.class).putExtra("username", username).putExtra("streamername",streamername));
+
+                              intent.putExtra("username", username);
+                              intent.putExtra("streamername",streamername);
+                              SearchActivity.this.startActivity( intent);
                           } else {//If not valid display error dialog
                               pb_search.setVisibility(View.INVISIBLE);
                               LOGGER.log(Level.FINE, "Search Failed");
