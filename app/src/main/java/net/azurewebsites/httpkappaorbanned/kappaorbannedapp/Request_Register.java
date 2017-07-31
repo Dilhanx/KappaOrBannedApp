@@ -10,11 +10,11 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.*;
 
 public class Request_Register extends StringRequest {
-    private static final String LOGIN_REQUEST_URL = "http://10.0.2.2:5000/Register";
+    private static final String REGISTER_REQUEST_URL = "http://10.0.2.2:5000/register";
     private Map<String, String> params;
 
     public Request_Register(String username,String email, String password, Response.Listener<String> listener) {
-        super(Method.POST, LOGIN_REQUEST_URL, listener, null);
+        super(Method.POST, REGISTER_REQUEST_URL, listener, null);
         params = new HashMap<>();
         params.put("username", username);
         params.put("email", email);

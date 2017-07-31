@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.azurewebsites.httpkappaorbanned.kappaorbannedapp.StreamerActivity">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bop"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+    <TextView
+        android:id="@+id/tv_streamer_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="142dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <TextView
+        android:id="@+id/tv_streamer_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Streamer Name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/tv_streamer_streamer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Real Name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+    <TextView
+        android:id="@+id/tv_streamer_real_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+    <TextView
+        android:id="@+id/tv_streamer_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comment"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <Button
+        android:id="@+id/bt_streamer_emote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emote"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="274dp" />
+
+    <ProgressBar
+        android:id="@+id/pb_streamer"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+</android.support.constraint.ConstraintLayout>

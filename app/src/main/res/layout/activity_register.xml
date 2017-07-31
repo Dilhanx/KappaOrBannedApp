@@ -35,9 +35,9 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="@+id/tv_register_email"
         app:layout_constraintRight_toRightOf="@+id/tf_register_email"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="23dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintLeft_toLeftOf="@+id/tv_register_username"
         app:layout_constraintTop_toTopOf="@+id/tv_register_username" />
 
@@ -66,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="195dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="66dp" />
 
     <EditText
         android:id="@+id/pf_register_password"
@@ -81,7 +81,7 @@
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/bt_register_register"
         app:layout_constraintRight_toRightOf="@+id/tf_register_email"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_register_password"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="8dp"
@@ -111,9 +111,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/bt_register_register"
         android:layout_marginEnd="1dp"
         app:layout_constraintRight_toRightOf="@+id/bt_register_register"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="135dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="145dp"
+        android:layout_marginBottom="134dp"
         app:layout_constraintLeft_toLeftOf="@+id/tv_register_email"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_register"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/bt_register_register"
+        app:layout_constraintTop_toBottomOf="@+id/pf_register_password"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 </android.support.constraint.ConstraintLayout>

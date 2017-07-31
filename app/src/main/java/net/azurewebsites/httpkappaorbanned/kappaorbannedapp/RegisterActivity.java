@@ -22,16 +22,19 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText tf_register_email = findViewById(R.id.tf_register_email);
         final EditText pf_register_password =  findViewById(R.id.pf_register_password);
         final Button bt_register_register =  findViewById(R.id.bt_register_register);
+        final ProgressBar pb_register = findViewById(R.id.pb_register);
 
         bt_register_register.setOnClickListener(new View.OnClickListener() {// On click login button
               @Override
               public void onClick(View view) {
+                  pb_register.setVisibility(View.VISIBLE);
+                  bt_register_register.setEnabled(false);
                   LOGGER.log(Level.FINE, "Register attempt");
                   final String username = tf_register_username.getText().toString();
                   final String email = tf_register_email.getText().toString();
                   final String password = pf_register_password.getText().toString();
 
-                  if (!username.equals("") || !email.equals("")||!password.equals("")) {// Check if fields are empty
+                  if (!username.equals("") && !email.equals("")&&!password.equals("")) {// Check if fields are empty
 
                       Response.Listener<String> responseListener = new Response.Listener<String>() {
                           @Override
@@ -39,32 +42,41 @@ public class RegisterActivity extends AppCompatActivity {
                               try {
                                   JSONObject jsonResponse = new JSONObject(response);
                                   LOGGER.log(Level.FINE, jsonResponse.toString());
+                                  tf_register_username.setText(jsonResponse.toString());
                                   String status = jsonResponse.getString("status");
-                                  if (status.equals("Account created")) {// If login is valid move on
+                                  if (status.equals("Account created")) {// If registers  move on
+                                      bt_register_register.setEnabled(true);
+                                      pb_register.setVisibility(View.INVISIBLE);
                                       LOGGER.log(Level.FINE, "Register sucessfull");
                                       AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                       builder.setMessage("Account created").setPositiveButton("Ok", null).create().show();
-
                                       RegisterActivity.this.startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
                                   } else {//If not valid display error dialog
+                                      bt_register_register.setEnabled(true);
+                                      pb_register.setVisibility(View.INVISIBLE);
                                       LOGGER.log(Level.FINE, "Register Failed");
                                       AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                       builder.setMessage("Register Failed : Account all ready there").setNegativeButton("Retry", null).create().show();
                                   }
 
                               } catch (JSONException e) {
+                                  bt_register_register.setEnabled(true);
+                                  pb_register.setVisibility(View.INVISIBLE);
                                   AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                   builder.setMessage("Register Failed : Sever error").setNegativeButton("Retry", null).create().show();e.printStackTrace();
                               }
                           }
                       };
                       //Create and send respronce
-                      Request_Login login = new Request_Login(username, password, responseListener);
+                      Request_Register Register = new Request_Register(username,email, password, responseListener);
                       RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                      queue.add(login);
+                      queue.add(Register);
 
                   }
                   else{
+                      bt_register_register.setEnabled(true);
+                      pb_register.setVisibility(View.INVISIBLE);
                       AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                       builder.setMessage("Fill in the details").setNegativeButton("Ok", null).create().show();
                   }
